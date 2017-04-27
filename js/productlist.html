@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>商品列表</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <!--引用base.less-->
+    <link rel="stylesheet/less" href="css/base.less">
+    <!--引用bootstrap.css-->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <!--引入自己的less文件-->
+    <link rel="stylesheet/less" href="css/productlist.less">
+    <!--引入编译less文件的js文件-->
+    <script src="lib/less/less.js"></script>
+</head>
+
+<body>
+    <!--头部通栏-->
+    <header id="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/header_logo.png" alt="">
+            </a>
+        </div>
+        <div class="appdown">
+            <a href="#">
+                <img src="images/app.png" alt="手机app下载">
+            </a>
+        </div>
+    </header>
+    <!--搜索部分-->
+    <section id="search">
+        <form action="#" class="form-search">
+            <input type="search" name="product" id="searchProduct" placeholder="请输入你想比价的商品">
+            <button type="button" class="btn btn-warning">搜索</button>
+        </form>
+    </section>
+    <!--面包屑部分-->
+    <nav class="product-title">
+        <a href="index.html">首页</a> &gt;
+        <a href="category.html">全部分类</a> &gt;
+        <!--ajax生成商品标题-->
+        <a href="#" id="fromCategory">电视</a>
+        <a class="select">筛选</a>
+    </nav>
+    <!--商品列表部分-->
+    <main class="product-list">
+        <!--ajax生成商品列表-->
+    </main>
+    <!--底部部分-->
+    <footer id="footer">
+        <div class="foot-top">
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+            <a href="#" style="width: 40%; border: 0;">
+                <img src="images/top.jpg" alt=""> 返回顶部
+            </a>
+        </div>
+        <div class="foot-bottom">
+            <P>
+                <a href="#" style="color:red;">手机app下载</a>
+                <a href="index.html">慢慢买手机版</a> -- 掌上比价平台
+            </P>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </footer>
+</body>
+<!--引入template.js-->
+<script src="lib/template/template.js"></script>
+<!--jQuery是bootstrap基础-->
+<script src="lib/jquery/jquery.js"></script>
+<!--引用bootstrap.js-->
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script type="text/html" id="productTMP">
+    <ul>
+        {{each result as value i}}
+        <li>
+            <a href="bijia.html?productid={{value.productId}}" class="clearfix">
+                <div class="pic">
+                    {{#value.productImg}}
+                </div>
+                <div class="info">
+                    <div class="tit">{{value.productName}}</div>
+                    <div class="price"><em>{{value.productPrice}}</em></div>
+                    <div class="other">
+                        <em>{{value.productQuote}}</em>
+                        <em>{{value.productCom}}</em>
+                    </div>
+                </div>
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+    <div class="page clearfix">
+            <div class="w33" ><a href="#" id="lastPage">上一页</a></div>
+            <div class="w33">
+                <select name="select" id="selectPage">
+                      
+                </select>
+            </div>
+            <div class="w33"><a href="#" id="nextPage">下一页</a></div>
+     </div>
+
+</script>
+<!--引入自己的js文件-->
+<script src="js/productlist.js"></script>
+
+</html>

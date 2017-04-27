@@ -1,0 +1,111 @@
+body {
+  font-family: "Microsoft YaHei";
+  background: #f1f1f1;
+}
+
+//导航菜单
+.menu {
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #fff;
+  > .clearfix {
+    > .menu-item {
+      float: left;
+      width: 25%;
+      a {
+        text-align: center;
+        display: block;
+        margin-top: 10px;
+        > img {
+          width: 50px;
+          height: 50px;
+        }
+        > p {
+          font-size: 12px;
+          margin: 5px 0;
+        }
+      }
+    }
+    > .menu-item:nth-last-child(-n+4) {
+      display: none;
+    }
+  }
+}
+
+//折扣推荐
+.recommend {
+  background-color: #fff;
+  > .recommend-title {
+    background-color: #ff9000;
+    > span {
+      height: 35px;
+      line-height: 35px;
+      font-size: 16px;
+      color: #fff;
+      padding-left: 20px;
+      margin-right: 50px;
+    }
+    > img {
+      float: right;
+      width: 20px;
+      height: 20px;
+      margin: 8px 10px 0 0;
+      color: #fff;
+    }
+  }
+  > .recommend-list {
+    > .clearfix {
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+      > .fl {
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+        img {
+          width: 100%;
+        }
+      }
+      > .right {
+        margin-left: 110px;
+        > h5 {
+          margin: 10px 0;
+        }
+        > .price {
+          color: #e92322;
+          margin-bottom: 10px;
+        }
+        > .source {
+          float: left;
+          color: #666;
+          font-size: 12px;
+        }
+        > .comment {
+          float: right;
+          margin-right: 10px;
+          color: #666;
+          font-size: 12px;
+          > .icon-comment {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            vertical-align: middle;
+            margin-right: 5px;
+            background: url(../images/icon_comment.png) center/cover no-repeat;
+          }
+        }
+      }
+    }
+  }
+  > .recommend-more {
+    padding: 10px;
+    > a {
+      width: 100%;
+      border: 1px solid #ccc;
+      display: block;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      border-radius: 5px;
+    }
+  }
+}

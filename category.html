@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>商品分类</title>
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+	<link rel="stylesheet/less" href="css/base.less">
+	<link rel="stylesheet/less" href="css/category.less">
+	<script src="js/less.js"></script>
+</head>
+
+<body>
+	<!--头部-->
+	<header id="header" class="header">
+		<a class="logo" href="index.html"><img src="images/header_logo.png" alt="logo"></a>
+		<a class="appdown" href="#"><img src="images/header_app.png" alt="下载APP"></a>
+	</header>
+	<!--搜索区域-->
+	<section class="search">
+		<form action="#">
+			<input type="search" placeholder="请输入你想要比价的商品" />
+			<button>搜索</button>
+		</form>
+	</section>
+
+	<!--分类区域-->
+	<section id="category">
+		<!--模板生成-->
+	</section>
+	<!--底部区域-->
+	<footer>
+		<div class="footer-menu">
+			<a href="#">登录</a>
+			<a href="#">注册</a>
+			<a href="#"><img src="images/top.jpg" alt="">返回顶部</a>
+		</div>
+		<div class="footer-links">
+			<p>
+				<a href="#">手机app下载</a>
+				<a href="">慢慢买手机版</a> --掌上比价平台
+			</p>
+
+			<p>m.manmanbuy.com</p>
+		</div>
+	</footer>
+
+
+	<!--商品分类标题-->
+	<script type="text/html" id='kind'>
+    {{each result as value i}}
+    <div class="panel-group">
+        <div class="panel panel-default " data-titleId='{{i}}'>
+            <div class="panel-heading" role="tab" id="heading">
+                <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{i}}"
+                       aria-expanded="true" aria-controls="collapse">
+                        {{value.title}}
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse{{i}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading">
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</script>
+	<!--商品分类列表-->
+	<script type="text/html" id='kindxia'>
+    <div class="row">
+        {{each result as value i}}
+        <div class="panel-body col-xs-4">
+            <a href="productlist.html?categoryid={{value.categoryId}}&category={{value.category}}&pageid=1">
+                {{value.category}}
+            </a>
+        </div>
+        {{/each}}
+    </div>
+</script>
+
+	<script src="lib/jquery/jquery.js"></script>
+	<script src="lib/bootstrap/js/bootstrap.js"></script>
+	<script src="js/template.js"></script>
+	<script src="js/base.js"></script>
+	<script src="js/category.js"></script>
+
+</body>
+
+</html>

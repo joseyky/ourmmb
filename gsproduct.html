@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico"/>
+    <link rel="stylesheet/less" href="css/base.less">
+    <!--<link rel="stylesheet" href="css/base.css"/>-->
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet/less" href="css/wyz.less">
+    <script src="js/less.js"></script>
+</head>
+<body>
+
+<header id="header" class="header">
+    <a class="back" href="index.html"><img src="images/icon_back.png" alt="返回"></a>
+    <a class="appdown" href="#"><img src="images/header_app.png" alt="下载APP"></a>
+
+    <h1>凑单品</h1>
+</header>
+
+
+<!-- 主体内容 -->
+<main class="cdp_main">
+    <div class="list">
+        <div class="hd">
+            <div class="filter">
+                <div class="search f_right">
+                    <i class="icon"></i>
+                </div>
+                <ul class="clearfix">
+                    <li class='on shop' data-id='0'><a href="#">京东<i></i></a></li>
+                    <li class='on area' data-id='0'><a href="#">华北<i></i></a></li>
+                    <li class='on' data-id='0'><a href="#">全部价格 <i></i></a></li>
+                </ul>
+            </div>
+            <div class="popbox popboxone" data-shopid='0'></div>
+            <div class="popbox popboxtwo" data-areaid='0'></div>
+            <div class="popbox popboxthree" data-id='0'></div>
+        </div>
+        <div class='main_bd'>
+            <ul class="clearfix main_bds">
+            </ul>
+        </div>
+</main>
+
+<!--底部-->
+<footer>
+    <!--底部菜单-->
+    <div class="footer-menu">
+        <a href="#">登录</a>
+        <a href="#">注册</a>
+        <a href="#"><img src="images/top.jpg" alt="">返回顶部</a>
+    </div>
+    <!--底部链接-->
+    <div class="footer-links">
+        <p>
+            <a href="#">手机app下载</a>
+            <a href="#">慢慢买手机版</a> --掌上比价平台
+        </p>
+
+        <p>m.manmanbuy.com</p>
+    </div>
+</footer>
+
+
+<!-- template模板 -->
+<script type="text/html " id='list1'>
+    <ul class="clearfix " id='hdname'>
+        {{each result as value i}}
+        <li class="liname " data-shopid='{{value.shopId}}'>{{value.shopName}}<i class='gou'></i></li>
+        {{/each}}
+    </ul>
+</script>
+<script type="text/html" id='list2'>
+    <ul class="clearfix">
+        {{each result as value i}}
+        <li class="liname " data-areaid='{{value.areaId}}'>{{value.areaName}}<i class='gou'></i></li>
+        {{/each}}
+    </ul>
+</script>
+<script type="text/html" id="list3">
+    {{each result as value i}}
+    <li>
+        <a href="#" class="clearfix">
+            <div class="bd_pic"><img src="{{value.productImg}}"></div>
+            <div class="bd_title">{{value.productName}}</div>
+            <div class="bd_other clearfix">
+                <div class="price">{{value.productPrice}}</div>
+                <div class="btn">去凑单</div>
+            </div>
+        </a>
+    </li>
+    {{/each}}
+</script>
+
+<!-- 外部js文件 -->
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/template.js"></script>
+<script src="js/cdp.js"></script>
+</body>
+</html>

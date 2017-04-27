@@ -1,0 +1,187 @@
+@orange: #ff841d;
+header {
+  height: 49px;
+  background: @orange;
+  .left {
+    float: left;
+    //display: block;
+    img {
+      width: 185.5px;
+      height: 25px;
+      margin: 12px 12px 12px 17px;
+    }
+  }
+  .right {
+    float: right;
+    img {
+      width: 34px;
+      height: 34px;
+      margin: 7px;
+    }
+  }
+}
+
+
+/*导航栏*/
+nav {
+  height: 36px;
+  border-bottom: 2px solid gray;
+  padding-left: 8px;
+  line-height: 36px;
+  a {
+    font-size: 13px;
+    font-weight: bolder;
+    float: left;
+  }
+  span {
+    font-weight: bolder;
+    font-size: 12px;
+    float: left;
+  }
+}
+/*标题通用样式*/
+.head() {
+  border-bottom: 2px solid gray;
+  height: 36px;
+  color: brown;
+  font: normal bolder 16px/36px "微软雅黑";
+  padding-left: 8px;
+}
+/*哪个牌子好样式样式*/
+#good {
+  #hp {
+    .head();
+  }
+  ul{
+    //.hao:nth-child(1){
+    //  //height: 80px;
+    //  color: red;
+    //  background-color: red !important;
+    //}
+    .hao {
+      height: 56px;
+      border-bottom: 1px solid gray;
+      padding: 20px;
+      position: relative;
+      &after {
+        content: '&gt;';
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      span {
+        text-align:center;
+        float: left;
+        width: 20px;
+        height: 20px;
+        color: white;
+        background: gray;
+        margin-right: 8px;
+      }
+      //span:nth-child(2){
+      //  background-color: red !important;
+      //}
+      //span:first-child{
+      //  background-color: red;
+      //}
+
+      div {
+        float: left;
+        .up{
+          height: 19px;
+          font-size:15px;
+          line-height: 19px;
+          color:black;
+        }
+        .down{
+          height: 13px;
+          font-size:12px;
+        }
+      }
+    }
+
+  }
+}
+/*销量排行*/
+#soldrank {
+  p {
+    .head();
+  }
+  #tmp2 {
+    .pai {
+      //position:relative;
+      height: 120px;
+      .pic {
+        //position:absolute;
+        float: left;
+        //display: block;
+        width: 100px;
+        height: 100px;
+      }
+      .info {
+        //float: left;
+        .tit {
+          height: 44px;
+          font-size:14px;
+          line-height: 22px;
+        }
+        .price {
+          height: 24px;
+          .money {
+            width: 84px;
+            height: 24px;
+            font-size:18px;
+            color:red;
+          }
+          .star {
+            width: 90px;
+            height: 18px;
+          }
+        }
+        .other {
+          height: 14px;
+          font-size:12px;
+          bj{
+            margin-right: 10px;
+          }
+        }
+      }
+
+    }
+  }
+}
+/*最新评论*/
+#comment {
+  p {
+    .head();
+  }
+  .ping {
+    overflow: hidden;
+    .pic2 {
+      float: left;
+      width: 80px;
+      height: 80px;
+    }
+    .title{
+      padding-left: 120px;
+    }
+    .comment{
+      padding: 10px;
+      margin: 10px;
+      display:block;
+      //border: 1px solid #000;
+      .name{
+        .star{
+          float: left;
+        }
+        .time{
+          float: right;
+        }
+      }
+      .con{
+        font-size:15px;
+      }
+    }
+  }
+}

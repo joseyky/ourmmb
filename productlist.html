@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>商品列表</title>
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/productlist.less">
+    <script src="js/less.js"></script>
+    <style type="text/css" id="less:mmb-MMBAPP-css-productlist">
+        body {
+            --background: #f1f1f1;
+        }
+
+        #product-list {
+            margin-top: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--头部-->
+<header id="header" class="header">
+    <a class="logo" href="index.html"><img src="images/header_logo.png" alt="logo"></a>
+    <a class="appdown" href="#"><img src="images/header_app.png" alt="下载APP"></a>
+</header>
+
+    <!--搜索区域-->
+    <div id="search">
+        <form action="#">
+            <input type="search" class="search" placeholder="请输入要比价的商品">
+            <input type="submit" class="submit" value="搜索">
+        </form>
+    </div>
+
+    <!--全部分類-->
+    <section id="product-list">
+        <nav class="product-list-title">
+            <!--模板生成内容-->
+        </nav>
+        <div class="product-list">
+            <ul>
+                <!--模板生成内容-->
+            </ul>
+        
+        <div class="page clearfix">
+            <!--<span class="w33">
+                <a href="#">上一页</a>
+            </span>
+            <span class="w33">
+                <select id="selectPage" name="select" selected style="border:1px solid #bababa; font-size:16px; padding:8px 15px; height:36px">
+                    <option value="1" selected>1/3</option>
+                </select>
+            </span>
+            <span class="w33">
+                <a href="#">下一页</a>
+            </span>-->
+        </div>
+        </div>
+    </section>
+
+    <!--底部-->
+<footer>
+    <div class="footer-menu">
+        <a href="#">登录</a>
+        <a href="#">注册</a>
+        <a href="#"><img src="images/top.jpg" alt="">返回顶部</a>
+    </div>
+    <div class="footer-links">
+        <p>
+            <a href="#">手机app下载</a>
+            <a href="">慢慢买手机版</a> --掌上比价平台
+        </p>
+
+        <p>m.manmanbuy.com</p>
+    </div>
+</footer>
+
+    <!--产品模板-->
+    <script type="text/html" id="directoryTmp">
+    {{each result as value i}}
+    <a href="index.html" class="list-title1">首页</a>  &gt;
+    <a href="category.html" class="list-title2">全部分类</a>  &gt;
+    <a href="#">{{value.category}}</a>   &gt;
+    <a href class="select">筛选</a>
+    {{/each}}
+    </script>
+
+<!--产品清单-->
+    <script type="text/html" id="listTmp">
+   {{ each result as value i }}
+    <li>
+      <a href="bijia.html?productid={{value.productId}}">
+        <div class="pic">{{#value.productImg}}</div>
+        <div class="info">
+          <div class="tit">{{value.productName}}</div>
+          <div class="price">{{value.productPrice}}</div>
+            <div class="other">{{value.productCom}}&nbsp;{{value.productQuote}}</div>
+        </div>
+      </a>
+    </li>
+    {{/each}}
+
+  </script>
+
+<!--分页模板-->
+<script type="text/html" id="pageTmp">
+     <span class="w33"><a  id="prev"  href="javascript:void(0)">上一页</a></span>
+     <span class="w33">
+        <select id="selectPage" name="select" selected style="border:1px solid #bababa; font-size:16px; padding:8px 15px; height:36px">
+            <option value="1" selected>{{totalCount/pagesize}}</option>
+        </select>
+     </span>
+     <span class="w33"><a id="next" href="javascript:void(0)">下一页</a></span>
+</script>
+
+</body>
+
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/bootstrap/js/bootstrap.js"></script>
+<script src="js/template.js"></script>
+<script src="js/base.js"></script>
+<script src="js/productlist.js"></script>
+
+</html>

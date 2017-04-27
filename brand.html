@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="icon" href="images/favicon.ico"/>
+    <link rel="stylesheet/less" href="css/base.less"/>
+    <link rel="stylesheet/less" href="css/brand.less"/>
+    <script src="js/less.js"></script>
+    <title>品牌大全</title>
+</head>
+<body>
+<header>
+    <a class="left">
+        <img src="images/header_logo.png"/>
+    </a>
+    <a class="right">
+        <img src="images/header_app.png"/>
+    </a>
+</header>
+
+
+<!--搜索框-->
+<section class="search">
+    <form action="#">
+        <input type="search" placeholder="请输入你想要比价的商品"/>
+        <button>搜索</button>
+    </form>
+</section>
+
+<!--面包屑导航栏-->
+<nav>
+    <a href="index.html">首页</a>
+    <span>&gt;</span>
+    <a href="#">全部分类</a>
+    <span>&gt;</span>
+</nav>
+<section id="good">
+    <!--<p>平板电视哪个牌子好</p>-->
+    <ul id="tmp1">
+        <!--<li class="hao">-->
+        <!--<span>1</span>-->
+
+        <!--<div>-->
+        <!--<p class="up">skjdhfskj</p>-->
+
+        <!--<p class="down">fjdsklfhks</p>-->
+        <!--</div>-->
+        <!--</li>-->
+    </ul>
+
+</section>
+<section id="soldrank">
+    <!--<p>平板电视产品销量排行</p>-->
+    <ul id="tmp2">
+
+    </ul>
+</section>
+<section id="comment">
+    <!--<p>平板电视最新评论</p>-->
+    <ul id="tmp3">
+
+    </ul>
+</section>
+<!--底部-->
+<footer>
+    <!--底部菜单-->
+    <div class="footer-menu">
+        <a href="#">登录</a>
+        <a href="#">注册</a>
+        <a href="#"><img src="images/top.jpg" alt="">返回顶部</a>
+    </div>
+    <!--底部链接-->
+    <div class="footer-links">
+        <p>
+            <a href="#">手机app下载</a>
+            <a href="#">慢慢买手机版</a> --掌上比价平台
+        </p>
+
+        <p>m.manmanbuy.com</p>
+    </div>
+</footer>
+<script type="text/html" id="goodtmp">
+    {{each result as value i}}
+    <li class="hao">
+        <span>{{i+1}}</span>
+
+        <div>
+            <p class="up">{{value.brandName}}</p>
+
+            <p class="down">{{value.brandInfo}}</p>
+        </div>
+    </li>
+    {{/each}}
+</script>
+<script type="text/html" id="ranktmp">
+    {{each result as value i}}
+    <li class="pai">
+        <div class="pic">{{#value.productImg}}</div>
+        <div class="info">
+            <div class="tit">{{value.productName}}</div>
+            <div class="price">
+                <span class="money">{{value.productPrice}}</span>
+                <span class="star"></span>
+            </div>
+            <div class="other">
+                <span class="bj">{{value.productQuote}}</span>
+                <span class="pl">全网{{value.productCom}}</span>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</script>
+<script type="text/html" id="commenttmp">
+    {{each result as value i}}
+    <li class="ping">
+        <div class="pic2"></div>
+        <div class="title"></div>
+        <a href="#" class="comment">
+            <div class="name">
+                {{value.comName}}:
+                <span class="star"></span>
+                <span class="time">{{value.comTime}}</span>
+            </div>
+            <div class="con">{{value.comContent}}</div>
+        </a>
+    </li>
+    {{/each}}
+</script>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/template.js"></script>
+<script src="js/brand.js"></script>
+</body>
+</html>

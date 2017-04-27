@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/index.less">
+    <link rel="stylesheet/less" href="css/brandtitle.less">
+    <script src="js/less.js"></script>
+</head>
+
+<body>
+    <!--头部-->
+    <header id="header" class="header">
+        <a class="logo" href="index.html"><img src="images/header_logo.png" alt=""></a>
+        <a class="appdown" href="#"><img src="images/header_app.png" alt=""></a>
+    </header>
+    <!--搜索框-->
+    <section id="search">
+        <form action="#">
+            <input type="search" placeholder="请输入您想比价的商品">
+            <input type="button" value="搜索">
+        </form>
+    </section>
+    <!-- 品牌分类 -->
+    <section id="category">
+        <nav class="category-title">
+            <a href="index.html" class="list-title1">首页</a> &gt; <a href="category.html" class="list-title2">全部分类</a> &gt;
+        </nav>
+        <nav class="hotrank">热门品牌排行</nav>
+        <ul class="items"></ul>
+    </section>
+    <!--底部-->
+    <footer>
+        <div class="footer-menu">
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+            <a href="#"><img src="images/top.jpg" alt="">返回顶部</a>
+        </div>
+        <div class="footer-links">
+            <p>
+                <a href="#">手机app下载</a>
+                <a href="">慢慢买手机版</a> --掌上比价平台
+            </p>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </footer>
+    <!--品牌排行 模板-->
+    <script id="brandtitle" type="text/html">
+        {{each result as value i}}
+        <li><a href="brand.html?brandtitleid={{value.brandTitleId}}">{{value.brandTitle}}</a></li>
+        {{/each}}
+    </script>
+    <script src="js/template.js"></script>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="js/brandtitle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <link rel="icon" href="images/favicon.ico"/>
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet/less" href="css/base.less"/>
+    <link rel="stylesheet/less" href="css/couponproduct.less"/>
+    <script src="js/less.js"></script>
+    <title>优惠券详情</title>
+</head>
+<body>
+<header id="header" class="header">
+    <a class="back" href="coupon.html"><img src="images/icon_back.png" alt="返回"></a>
+    <a class="appdown" href="#"><img src="images/header_app.png" alt="下载APP"></a>
+
+    <h1>肯德基优惠券</h1>
+</header>
+<div class="layout">
+    <div class="top">--点餐前出示手中的优惠券，即可享受优惠--</div>
+    <div class="header"></div>
+    <ul class="content">
+
+    </ul>
+    <nav>
+        <a href="index.html">首页</a>
+        <span>&gt;</span>
+        <a href="coupon.html">优惠券</a>
+        <span>&gt;</span>
+        <a href="#" id="navlast"></a>
+    </nav>
+    <footer>
+        <div class="footer-menu">
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+            <a href="#"><img src="images/top.jpg" alt="">返回顶部</a>
+        </div>
+        <div class="footer-links">
+            <p>
+                <a href="#">手机app下载</a>
+                <a href="">慢慢买手机版</a> --掌上比价平台
+            </p>
+
+            <p>m.manmanbuy.com</p>
+        </div>
+    </footer>
+    <div class="mask"></div>
+    <div class="lunbo inBounceDown">
+        <div class="lunbokou ">
+            <ul>
+            </ul>
+        </div>
+        <div class="right"><a href="javascript:;">&gt;</a></div>
+        <div class="left"><a href="javascript:;">&lt;</a></div>
+    </div>
+</div>
+
+<script type="text/html" id="coupontmp">
+    {{each result as value i}}
+    <li class="clearfix">
+        <a href="#">
+            <div class="pic">
+                {{#value.couponProductImg}}
+            </div>
+            <div class="info">
+                <div class="title">
+                    <h3>{{value.couponProductName}}</h3>
+
+                    <h2>{{value.couponProductPrice}}</h2>
+                </div>
+                <div class="time">{{value.couponProductTime}}</div>
+            </div>
+        </a>
+    </li>
+    {{/each}}
+</script>
+<script type="text/html" id="lunbotmp">
+    {{each result as value i}}
+    <li>
+        {{#value.couponProductImg}}
+    </li>
+    {{/each}}
+</script>
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/template.js"></script>
+<script src="js/couponproduct.js"></script>
+</body>
+</html>

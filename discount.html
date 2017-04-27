@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/discount.less">
+    <script src="js/less.js"></script>
+</head>
+
+<body>
+    <!--头部-->
+<header id="header" class="header">
+    <a class="back" href="index.html"><img src="images/icon_back.png" alt="返回"></a>
+    <a class="appdown" href="#"><img src="images/header_app.png" alt="下载APP"></a>
+
+    <h1>国内折扣</h1>
+</header>
+
+
+    <!-- 主体部分 -->
+    <main class="discount-product"></main>
+
+
+    <!--底部-->
+    <footer>
+        <div class="footer-menu">
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+            <a href="#"><img src="images/top.jpg" alt="">返回顶部</a>
+        </div>
+        <div class="footer-links">
+            <p>
+                <a href="#">手机app下载</a>
+                <a href="">慢慢买手机版</a> --掌上比价平台
+            </p>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </footer>
+
+
+    <!-- 折扣模板 -->
+    <script id="discountProduct" type="text/html">
+    {{each result as value i}}
+    <h3 class="title">{{value.productName}}</h3>
+    <h4>{{value.productPinkage}}</h4>
+    <div class="from">
+        <span>{{value.productFrom}}</span>
+        <span>{{value.productTime}}</span>
+        <span>{{value.productTips}}</span>
+    </div>
+    <div class="content">
+        <div class="smpic">
+            <img src="http://cacheimg.manmanbuy.com/r_img/cacheimg.aspx?width=600&amp;imgurl=j_sources/img/2016/10/24/190_190_0_36618798b6e1a98d9f4ae8f7a195f41b.jpg" alt="">
+        </div>
+        <div class="description">
+            <p>{{value.productInfo}}</p>
+            <div class="bigpic">{{#value.productImg}}</div>
+        </div>
+    </div>
+    <div class="golink"><a href="redirect.aspx?tjid=521575&amp;y=cu_share">前往购买</a></div>
+    <div class="discount-moreInfo">
+        <img src="images/mmbweixin2.png" style="width: 100%; height: auto;">
+    </div>
+    <div class="discount-comment">
+        <div class="title">发表评论</div>
+        <div class="content">
+            <div class="form">
+                <textarea rows="3"></textarea>
+                <input type="submit" value="发表评论">
+            </div>
+        </div>
+        <div>最新评论</div>
+    </div>
+    {{/each}}
+    </script>
+
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="js/template.js"></script>
+    <script src="js/discount.js"></script>
+</body>
+
+</html>
